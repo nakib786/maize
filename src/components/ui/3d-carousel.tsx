@@ -20,6 +20,22 @@ const interiorDesignImages = [
 function ModernSlider() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
+  const [imagesLoaded, setImagesLoaded] = useState<boolean[]>(new Array(interiorDesignImages.length).fill(false))
+
+  // Preload images
+  useEffect(() => {
+    interiorDesignImages.forEach((src, index) => {
+      const img = new Image()
+      img.onload = () => {
+        setImagesLoaded(prev => {
+          const newState = [...prev]
+          newState[index] = true
+          return newState
+        })
+      }
+      img.src = src
+    })
+  }, [])
 
   // Auto-play functionality
   useEffect(() => {
@@ -27,10 +43,10 @@ function ModernSlider() {
 
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % interiorDesignImages.length)
-    }, 4000) // Change slide every 4 seconds
+    }, 5000) // Change slide every 5 seconds for smoother experience
 
     return () => clearInterval(interval)
-  }, [isAutoPlaying])
+  }, [isAutoPlaying, interiorDesignImages.length])
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % interiorDesignImages.length)
@@ -50,19 +66,20 @@ function ModernSlider() {
     <div className="relative w-full max-w-6xl mx-auto">
       {/* Main Slider */}
       <div className="relative h-[600px] md:h-[700px] overflow-hidden rounded-2xl">
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode="wait" initial={false}>
           <motion.div
             key={currentIndex}
-            initial={{ opacity: 0, scale: 1.1 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.9 }}
-            transition={{ duration: 0.7, ease: "easeInOut" }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
             className="absolute inset-0"
           >
             <img
               src={interiorDesignImages[currentIndex]}
               alt={`Interior design ${currentIndex + 1}`}
               className="w-full h-full object-cover"
+              loading="eager"
             />
             {/* Overlay gradient */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />

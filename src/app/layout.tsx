@@ -6,6 +6,11 @@ export const metadata: Metadata = {
   description: 'Specializing in new builds, renovations, rezoning, and subdivisions. Quality construction services in New Zealand.',
   keywords: 'construction, new build, renovation, rezone, subdivision, New Zealand',
   authors: [{ name: 'Maize Developments' }],
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
+  },
 }
 
 export const viewport: Viewport = {
