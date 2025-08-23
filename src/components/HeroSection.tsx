@@ -74,7 +74,7 @@ export default function HeroSection() {
           </div>
 
           {/* Simple CTA Section */}
-          <div className="mt-12 md:mt-16 text-center animate-fade-in-up animation-delay-500 px-4">
+          <div className="mt-8 md:mt-10 text-center animate-fade-in-up animation-delay-500 px-4">
             <Link 
               href="#contact" 
               className="inline-flex items-center bg-green-500 hover:bg-green-600 text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
