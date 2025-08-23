@@ -7,10 +7,10 @@ export default function ContactSection() {
             {/* Left Content */}
             <div className="space-y-8">
               <div>
-                <h2 className="text-5xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent mb-6">
+                <h2 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent mb-6">
                   Get in Touch
                 </h2>
-                <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+                <p className="text-base md:text-lg text-gray-700 mb-8 leading-relaxed">
                   Have a question or want to discuss a project?<br />
                   Feel free to reach out to Maize Homes<br />
                   Developments. We&apos;re here to help.
@@ -46,21 +46,21 @@ export default function ContactSection() {
                 <div className="group">
                   <a 
                     href="tel:+16043623493" 
-                    className="flex items-center space-x-4 p-4 rounded-xl bg-gradient-to-r from-gray-50 to-gray-100 hover:from-blue-50 hover:to-indigo-100 transition-all duration-300 hover:shadow-lg hover:scale-105 border border-gray-200 hover:border-blue-300"
+                    className="flex items-center space-x-3 md:space-x-4 p-3 md:p-4 rounded-xl bg-gradient-to-r from-gray-50 to-gray-100 hover:from-blue-50 hover:to-indigo-100 transition-all duration-300 hover:shadow-lg hover:scale-105 border border-gray-200 hover:border-blue-300"
                   >
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center shadow-lg">
-                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center shadow-lg flex-shrink-0">
+                      <svg className="w-5 h-5 md:w-6 md:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                       </svg>
                     </div>
-                    <div>
-                      <p className="font-semibold text-gray-900">Phone</p>
-                      <p className="text-blue-600 font-medium group-hover:text-blue-700 transition-colors duration-300">
+                    <div className="min-w-0 flex-1">
+                      <p className="font-semibold text-gray-900 text-sm md:text-base">Phone</p>
+                      <p className="text-blue-600 font-medium group-hover:text-blue-700 transition-colors duration-300 text-sm md:text-base">
                         +1 604 362 3493
                       </p>
                     </div>
-                    <div className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <svg className="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex-shrink-0">
+                      <svg className="w-4 h-4 md:w-5 md:h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
                     </div>
@@ -70,21 +70,21 @@ export default function ContactSection() {
                 <div className="group">
                   <a 
                     href="mailto:gbasra@maizedevelopments.ca" 
-                    className="flex items-center space-x-4 p-4 rounded-xl bg-gradient-to-r from-gray-50 to-gray-100 hover:from-green-50 hover:to-emerald-100 transition-all duration-300 hover:shadow-lg hover:scale-105 border border-gray-200 hover:border-green-300"
+                    className="flex items-center space-x-3 md:space-x-4 p-3 md:p-4 rounded-xl bg-gradient-to-r from-gray-50 to-gray-100 hover:from-green-50 hover:to-emerald-100 transition-all duration-300 hover:shadow-lg hover:scale-105 border border-gray-200 hover:border-green-300"
                   >
-                    <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center shadow-lg">
-                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center shadow-lg flex-shrink-0">
+                      <svg className="w-5 h-5 md:w-6 md:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                       </svg>
                     </div>
-                    <div>
-                      <p className="font-semibold text-gray-900">Email</p>
-                      <p className="text-green-600 font-medium group-hover:text-green-700 transition-colors duration-300">
+                    <div className="min-w-0 flex-1">
+                      <p className="font-semibold text-gray-900 text-sm md:text-base">Email</p>
+                      <p className="text-green-600 font-medium group-hover:text-green-700 transition-colors duration-300 text-sm md:text-base break-all">
                         gbasra@maizedevelopments.ca
                       </p>
                     </div>
-                    <div className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex-shrink-0">
+                      <svg className="w-4 h-4 md:w-5 md:h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
                     </div>

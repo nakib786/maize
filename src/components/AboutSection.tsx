@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { TestimonialsSection as TestimonialsMarquee } from "@/components/ui/testimonials-with-marquee"
+import { ThreeDPhotoCarousel } from "@/components/ui/3d-carousel"
 
 const values = [
   {
@@ -118,8 +119,8 @@ export default function AboutSection() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Text Content */}
             <div className="space-y-6">
-              <h2 className="text-5xl font-bold leading-tight">About Maize Developments</h2>
-              <p className="text-lg leading-relaxed text-gray-300">
+              <h2 className="text-3xl md:text-5xl font-bold leading-tight">About Maize Developments</h2>
+              <p className="text-base md:text-lg leading-relaxed text-gray-300">
                 Maize Developments is committed to sustainable building practices, innovative 
                 design solutions, and exceeding client expectations. Our dedication to using eco-
                 friendly materials and delivering visually stunning, environmentally responsible 
@@ -127,23 +128,18 @@ export default function AboutSection() {
                 homes that reflect our clients&apos; unique styles and needs, ensuring every project is a 
                 true representation of their vision.
               </p>
-              <div className="pt-4">
+              {/* Our Story button hidden for now */}
+              {/* <div className="pt-4">
                 <button className="px-8 py-3 bg-transparent border-2 border-white text-white rounded-full hover:bg-white hover:text-gray-900 transition-all duration-300">
                   Our Story
                 </button>
-              </div>
+              </div> */}
             </div>
 
-            {/* Image */}
+            {/* 3D Carousel */}
             <div className="relative">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
-                <Image
-                  src="/images/11062b_dc09041b2d8f4b9f8961ec200e0af66ff000.jpg"
-                  alt="Maize Developments Team"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
+              <div className="relative overflow-hidden rounded-lg">
+                <ThreeDPhotoCarousel />
               </div>
             </div>
           </div>
@@ -154,7 +150,7 @@ export default function AboutSection() {
       <section className="py-20 bg-gray-600 text-white">
         <div className="container mx-auto px-4">
           <div className="mb-16">
-            <h2 className="text-5xl font-bold leading-tight mb-8">
+            <h2 className="text-3xl md:text-5xl font-bold leading-tight mb-8">
               Why Choose<br />
               Maize Homes<br />
               Developments
@@ -169,10 +165,10 @@ export default function AboutSection() {
                     <span className="text-2xl font-bold text-gray-400">( {value.number} )</span>
                   </div>
                   <div className="lg:col-span-3">
-                    <h3 className="text-2xl font-bold">{value.title}</h3>
+                    <h3 className="text-xl md:text-2xl font-bold">{value.title}</h3>
                   </div>
                   <div className="lg:col-span-8">
-                    <p className="text-lg leading-relaxed text-gray-300">
+                    <p className="text-base md:text-lg leading-relaxed text-gray-300">
                       {value.description}
                     </p>
                   </div>
