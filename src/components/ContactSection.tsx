@@ -69,7 +69,7 @@ export default function ContactSection() {
                 
                 <div className="group">
                   <a 
-                    href="mailto:gbasra@maizedevelopment.ca" 
+                    href="mailto:gbasra@maizedevelopments.ca" 
                     className="flex items-center space-x-4 p-4 rounded-xl bg-gradient-to-r from-gray-50 to-gray-100 hover:from-green-50 hover:to-emerald-100 transition-all duration-300 hover:shadow-lg hover:scale-105 border border-gray-200 hover:border-green-300"
                   >
                     <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center shadow-lg">
@@ -80,7 +80,7 @@ export default function ContactSection() {
                     <div>
                       <p className="font-semibold text-gray-900">Email</p>
                       <p className="text-green-600 font-medium group-hover:text-green-700 transition-colors duration-300">
-                        gbasra@maizedevelopment.ca
+                        gbasra@maizedevelopments.ca
                       </p>
                     </div>
                     <div className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -95,7 +95,18 @@ export default function ContactSection() {
 
             {/* Right Content - Modern Form */}
             <div className="space-y-6">
-              <form className="space-y-6">
+              <form 
+                action="https://formsubmit.co/gbasra@maizedevelopments.ca" 
+                method="POST"
+                className="space-y-6"
+              >
+                {/* FormSubmit hidden fields for configuration */}
+                <input type="hidden" name="_subject" value="New Contact Form Submission - Maize Homes Developments" />
+                <input type="hidden" name="_next" value="https://maizedevelopments.ca/thank-you" />
+                <input type="hidden" name="_autoresponse" value="Thank you for contacting Maize Homes Developments! We have received your message and will get back to you within 24-48 hours. If you have an urgent inquiry, please call us at +1 604 362 3493." />
+                <input type="hidden" name="_template" value="table" />
+                <input type="hidden" name="_captcha" value="false" />
+                
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="group">
                     <label htmlFor="firstName" className="block text-sm font-semibold text-gray-700 mb-2">
@@ -143,7 +154,7 @@ export default function ContactSection() {
                     Phone
                   </label>
                   <div className="flex">
-                    <select className="px-3 py-3 border border-gray-300 rounded-l-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white shadow-sm">
+                    <select name="countryCode" className="px-3 py-3 border border-gray-300 rounded-l-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white shadow-sm">
                       <option value="+1">🇨🇦 +1</option>
                       <option value="+1">🇺🇸 +1</option>
                     </select>
@@ -165,6 +176,7 @@ export default function ContactSection() {
                     id="message"
                     name="message"
                     rows={4}
+                    required
                     className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 hover:border-gray-400 bg-white shadow-sm resize-vertical"
                     placeholder="Tell us about your project..."
                   ></textarea>

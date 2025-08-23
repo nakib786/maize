@@ -630,7 +630,7 @@ body {
 .overflow-hidden { overflow: hidden; }
 
 .object-cover { object-fit: cover; }
-.aspect-\\[4\\/3\\] { aspect-ratio: 4 / 3; }
+.aspect-4-3 { aspect-ratio: 4 / 3; }
 
 .transition-colors { transition-property: color, background-color, border-color; }
 .transition-transform { transition-property: transform; }
