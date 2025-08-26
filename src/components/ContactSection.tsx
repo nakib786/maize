@@ -1,4 +1,95 @@
+"use client"
+
+import { useState } from 'react'
+
 export default function ContactSection() {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    message: ''
+  })
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }))
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+
+    try {
+      const response = await fetch('https://formsubmit.co/gbasra@maizedevelopments.ca', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          _subject: 'New Contact Form Submission - Maize Homes Developments',
+          _template: 'table',
+          _captcha: 'false',
+          ...formData
+        })
+      })
+
+      if (response.ok) {
+        setIsSubmitted(true)
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          message: ''
+        })
+      } else {
+        throw new Error('Form submission failed')
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      alert('There was an error submitting your form. Please try again or contact us directly.')
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
+  if (isSubmitted) {
+    return (
+      <section id="contact" className="py-20 bg-gradient-to-br from-gray-50 to-white">
+        <div className="container mx-auto px-4">
+          <div className="bg-white rounded-3xl p-12 shadow-2xl border border-gray-100">
+            <div className="text-center space-y-6">
+              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto">
+                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+                Thank You!
+              </h2>
+              <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+                Your message has been submitted successfully. We will get back to you as soon as possible.
+              </p>
+              <button
+                onClick={() => setIsSubmitted(false)}
+                className="mt-6 bg-gradient-to-r from-gray-900 to-gray-700 text-white py-3 px-6 rounded-xl font-semibold hover:from-gray-800 hover:to-gray-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              >
+                Send Another Message
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
   return (
     <section id="contact" className="py-20 bg-gradient-to-br from-gray-50 to-white">
       <div className="container mx-auto px-4">
@@ -95,18 +186,7 @@ export default function ContactSection() {
 
             {/* Right Content - Modern Form */}
             <div className="space-y-6">
-              <form 
-                action="https://formsubmit.co/gbasra@maizedevelopments.ca" 
-                method="POST"
-                className="space-y-6"
-              >
-                {/* FormSubmit hidden fields for configuration */}
-                <input type="hidden" name="_subject" value="New Contact Form Submission - Maize Homes Developments" />
-                <input type="hidden" name="_next" value="https://maizedevelopments.ca/thank-you" />
-                <input type="hidden" name="_autoresponse" value="Thank you for contacting Maize Homes Developments! We have received your message and will get back to you within 24-48 hours. If you have an urgent inquiry, please call us at +1 604 362 3493." />
-                <input type="hidden" name="_template" value="table" />
-                <input type="hidden" name="_captcha" value="false" />
-                
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="group">
                     <label htmlFor="firstName" className="block text-sm font-semibold text-gray-700 mb-2">
@@ -116,6 +196,8 @@ export default function ContactSection() {
                       type="text"
                       id="firstName"
                       name="firstName"
+                      value={formData.firstName}
+                      onChange={handleInputChange}
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 hover:border-gray-400 bg-white shadow-sm"
                       placeholder="Enter your first name"
@@ -129,6 +211,8 @@ export default function ContactSection() {
                       type="text"
                       id="lastName"
                       name="lastName"
+                      value={formData.lastName}
+                      onChange={handleInputChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 hover:border-gray-400 bg-white shadow-sm"
                       placeholder="Enter your last name"
                     />
@@ -143,6 +227,8 @@ export default function ContactSection() {
                     type="email"
                     id="email"
                     name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 hover:border-gray-400 bg-white shadow-sm"
                     placeholder="Enter your email address"
@@ -162,6 +248,8 @@ export default function ContactSection() {
                       type="tel"
                       id="phone"
                       name="phone"
+                      value={formData.phone}
+                      onChange={handleInputChange}
                       className="flex-1 px-4 py-3 border border-l-0 border-gray-300 rounded-r-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 hover:border-gray-400 bg-white shadow-sm"
                       placeholder="Enter your phone number"
                     />
@@ -175,6 +263,8 @@ export default function ContactSection() {
                   <textarea
                     id="message"
                     name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
                     rows={4}
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 hover:border-gray-400 bg-white shadow-sm resize-vertical"
@@ -184,9 +274,10 @@ export default function ContactSection() {
 
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-gray-900 to-gray-700 text-white py-4 px-6 rounded-xl font-semibold hover:from-gray-800 hover:to-gray-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                  disabled={isSubmitting}
+                  className="w-full bg-gradient-to-r from-gray-900 to-gray-700 text-white py-4 px-6 rounded-xl font-semibold hover:from-gray-800 hover:to-gray-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                 >
-                  Send Message
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
             </div>
