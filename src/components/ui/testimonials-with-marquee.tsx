@@ -33,7 +33,7 @@ export function TestimonialsSection({
         <div className="flex flex-col items-center gap-6 px-4 sm:gap-8">
           <div className="inline-flex items-center rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-white/80 backdrop-blur-sm">
             <span className="mr-2">⭐</span>
-            Trusted by 200+ Clients
+            Trusted by Satisfied Clients
           </div>
           <h2 className="max-w-[720px] text-4xl font-bold leading-tight text-white sm:text-6xl sm:leading-tight">
             {title}
