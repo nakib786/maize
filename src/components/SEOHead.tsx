@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect } from 'react'
+import React, { useEffect } from 'react'
 
 interface SEOHeadProps {
   title?: string
@@ -8,15 +8,13 @@ interface SEOHeadProps {
   keywords?: string[]
   canonical?: string
   ogImage?: string
-  structuredData?: any
+  structuredData?: Record<string, unknown>
 }
 
 export default function SEOHead({
   title,
   description,
-  keywords = [],
   canonical,
-  ogImage = '/images/maize.png',
   structuredData
 }: SEOHeadProps) {
   useEffect(() => {
@@ -71,8 +69,8 @@ export const SEOHeading = ({
   children, 
   ...props 
 }: { level?: 1 | 2 | 3 | 4 | 5 | 6 } & React.HTMLAttributes<HTMLElement>) => {
-  const Tag = `h${level}` as keyof JSX.IntrinsicElements
-  return <Tag itemProp="headline" {...props}>{children}</Tag>
+  const Tag = `h${level}` as 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
+  return React.createElement(Tag, { itemProp: "headline", ...props }, children)
 }
 
 export const SEOImage = ({ 

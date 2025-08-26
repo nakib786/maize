@@ -1,6 +1,6 @@
 'use client'
 
-import { SEOService, SEOHeading, SEOImage, SEOLink } from './SEOHead'
+import { SEOService, SEOHeading, SEOImage } from './SEOHead'
 
 interface ServiceData {
   id: number

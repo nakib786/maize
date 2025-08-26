@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import { TestimonialsSection as TestimonialsMarquee } from "@/components/ui/testimonials-with-marquee"
 import { ThreeDPhotoCarousel } from "@/components/ui/3d-carousel"
 

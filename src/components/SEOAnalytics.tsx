@@ -81,7 +81,7 @@ export default function SEOAnalytics({
             if (window.gtag) {
               window.gtag('event', 'FID', {
                 event_category: 'Web Vitals',
-                value: Math.round(entry.processingStart - entry.startTime),
+                value: Math.round((entry as PerformanceEntry & { processingStart: number }).processingStart - entry.startTime),
                 event_label: pageUrl
               })
             }
@@ -95,8 +95,8 @@ export default function SEOAnalytics({
           const entries = list.getEntries()
           
           entries.forEach((entry) => {
-            if (!entry.hadRecentInput) {
-              clsValue += (entry as any).value
+            if (!(entry as PerformanceEntry & { hadRecentInput: boolean }).hadRecentInput) {
+              clsValue += (entry as PerformanceEntry & { value: number }).value
             }
           })
 
@@ -207,6 +207,6 @@ export default function SEOAnalytics({
 // Declare global gtag function
 declare global {
   interface Window {
-    gtag: (...args: any[]) => void
+    gtag: (...args: unknown[]) => void
   }
 }

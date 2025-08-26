@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
+import Image from "next/image"
 
 // Local interior design images
 const interiorDesignImages = [
@@ -20,22 +21,9 @@ const interiorDesignImages = [
 function ModernSlider() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
-  const [imagesLoaded, setImagesLoaded] = useState<boolean[]>(new Array(interiorDesignImages.length).fill(false))
 
-  // Preload images
-  useEffect(() => {
-    interiorDesignImages.forEach((src, index) => {
-      const img = new Image()
-      img.onload = () => {
-        setImagesLoaded(prev => {
-          const newState = [...prev]
-          newState[index] = true
-          return newState
-        })
-      }
-      img.src = src
-    })
-  }, [])
+
+
 
   // Auto-play functionality
   useEffect(() => {
@@ -46,7 +34,7 @@ function ModernSlider() {
     }, 5000) // Change slide every 5 seconds for smoother experience
 
     return () => clearInterval(interval)
-  }, [isAutoPlaying, interiorDesignImages.length])
+  }, [isAutoPlaying])
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % interiorDesignImages.length)
@@ -75,11 +63,12 @@ function ModernSlider() {
             transition={{ duration: 0.5, ease: "easeInOut" }}
             className="absolute inset-0"
           >
-            <img
+            <Image
               src={interiorDesignImages[currentIndex]}
               alt={`Interior design ${currentIndex + 1}`}
-              className="w-full h-full object-cover"
-              loading="eager"
+              fill
+              className="object-cover"
+              priority
             />
             {/* Overlay gradient */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
@@ -139,10 +128,11 @@ function ModernSlider() {
                 : "opacity-60 hover:opacity-100"
             }`}
           >
-            <img
+            <Image
               src={image}
               alt={`Thumbnail ${index + 1}`}
-              className="w-full h-full object-cover"
+              fill
+              className="object-cover"
             />
           </button>
         ))}
