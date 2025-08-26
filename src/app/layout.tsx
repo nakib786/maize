@@ -86,8 +86,8 @@ export const metadata: Metadata = {
       { url: '/favicon.svg' },
       { url: '/favicon.ico', sizes: 'any' },
     ],
-    shortcut: '/favicon.svg',
-    apple: '/favicon.svg',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
   },
   manifest: '/manifest.json',
 }
@@ -145,6 +145,10 @@ export default function RootLayout({
         <meta name="business-type" content="construction-company" />
         <meta name="service-area" content="British Columbia, Canada" />
         <meta name="services" content="new-build,renovation,rezoning,subdivision" />
+        
+        {/* Favicon */}
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         
         {/* Preconnect to external domains for performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
