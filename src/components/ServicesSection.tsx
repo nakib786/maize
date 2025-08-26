@@ -5,8 +5,8 @@ const services = [
     id: 1,
     title: "New Build",
     description: "Building your dream home from the ground up is our passion. Our new build services encompass everything from initial design and custom blueprints to construction and finishing touches. We work closely with you to understand your vision and bring it to life with exceptional craftsmanship and attention to detail. With Maize Developments, you can expect a seamless and enjoyable building experience, resulting in a home that perfectly reflects your style and needs.",
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&h=600&fit=crop",
-    imageAlt: "Residential New Build"
+    image: "https://img.freepik.com/free-photo/3d-house-with-scaffolding_1048-4702.jpg",
+    imageAlt: "New Build Construction"
   },
   {
     id: 2,
@@ -26,8 +26,8 @@ const services = [
     id: 4,
     title: "Subdivisions",
     description: "Our subdivision services are designed to help you maximize the value and utility of your land. Whether you're looking to divide a large property into smaller lots for development or create a new residential community, we have the expertise to manage the entire process. From planning and surveying to obtaining necessary approvals and overseeing construction, Maize Developments ensures that your subdivision project is executed efficiently and effectively.",
-    image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&h=600&fit=crop",
-    imageAlt: "Residential Subdivision"
+    image: "https://img.freepik.com/free-vector/real-estate-photography-abstract-concept-vector-illustration-property-photography-services-realty-agency-advertisement-house-preparation-photo-editing-online-listing-abstract-metaphor_335657-1950.jpg",
+    imageAlt: "Land Development"
   }
 ]
 
