@@ -22,9 +22,6 @@ function ModernSlider() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
 
-
-
-
   // Auto-play functionality
   useEffect(() => {
     if (!isAutoPlaying) return
@@ -116,13 +113,13 @@ function ModernSlider() {
         </button>
       </div>
 
-             {/* Thumbnail Navigation */}
-       <div className="mt-6 flex justify-center gap-3 overflow-x-auto pb-2 scrollbar-hide">
+      {/* Thumbnail Navigation */}
+      <div className="mt-6 flex justify-center gap-3 overflow-x-auto pb-2 scrollbar-hide">
         {interiorDesignImages.map((image, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden transition-all duration-300 ${
+            className={`flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden transition-all duration-300 relative ${
               index === currentIndex
                 ? "ring-2 ring-blue-500 ring-offset-2 ring-offset-gray-900"
                 : "opacity-60 hover:opacity-100"
