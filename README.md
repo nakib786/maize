@@ -1,36 +1,243 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Maize Developments - Professional Construction Services
 
-## Getting Started
+A modern, SEO-optimized website for Maize Developments, a professional construction company specializing in new builds, renovations, rezoning, and subdivisions in British Columbia, Canada.
 
-First, run the development server:
+## 🏗️ About
 
+Maize Developments offers comprehensive construction services including:
+- **New Build Construction**: Custom homes from blueprints to completion
+- **Home Renovation**: Complete home transformation services
+- **Property Rezoning**: Professional rezoning consultation and services
+- **Land Subdivisions**: Land subdivision and development services
+
+## 🚀 Features
+
+### SEO & Performance Optimizations
+- **Advanced SEO**: Comprehensive meta tags, structured data, and semantic markup
+- **AI Crawler Friendly**: Optimized for AI model crawlers (GPTBot, Claude, etc.)
+- **Core Web Vitals**: Optimized for LCP, FID, and CLS metrics
+- **Structured Data**: JSON-LD schema markup for better search engine understanding
+- **Sitemap & Robots**: XML sitemap and robots.txt for better crawling
+- **PWA Support**: Web app manifest for mobile experience
+
+### Technical Features
+- **Next.js 15**: Latest React framework with App Router
+- **TypeScript**: Full type safety
+- **Tailwind CSS**: Utility-first CSS framework
+- **Framer Motion**: Smooth animations and transitions
+- **Responsive Design**: Mobile-first approach
+- **Performance Optimized**: Image optimization, code splitting, and caching
+
+## 📁 Project Structure
+
+```
+src/
+├── app/
+│   ├── layout.tsx          # Root layout with SEO metadata
+│   ├── page.tsx            # Homepage with AI-friendly content
+│   └── globals.css         # Global styles
+├── components/
+│   ├── Header.tsx          # Navigation header
+│   ├── HeroSection.tsx     # Hero section with video background
+│   ├── ServicesSection.tsx # Services showcase
+│   ├── AboutSection.tsx    # Company information
+│   ├── ContactSection.tsx  # Contact form and details
+│   ├── Footer.tsx          # Site footer
+│   ├── SEOHead.tsx         # SEO component with semantic markup
+│   ├── AIFriendlyContent.tsx # Hidden content for AI crawlers
+│   ├── SEOAnalytics.tsx    # SEO tracking and analytics
+│   └── ui/                 # Reusable UI components
+├── lib/
+│   ├── utils.ts            # Utility functions
+│   └── structured-data.ts  # JSON-LD structured data
+public/
+├── robots.txt              # Search engine crawling rules
+├── sitemap.xml             # XML sitemap
+├── manifest.json           # PWA manifest
+└── images/                 # Optimized images
+```
+
+## 🔧 SEO Implementation
+
+### 1. Meta Tags & Open Graph
+- Comprehensive meta descriptions and keywords
+- Open Graph tags for social media sharing
+- Twitter Card optimization
+- Canonical URLs and alternate languages
+
+### 2. Structured Data (JSON-LD)
+- Organization schema
+- LocalBusiness schema
+- WebSite schema
+- FAQ schema
+- BreadcrumbList schema
+- Service schema for each service offering
+
+### 3. AI Crawler Optimization
+- Hidden semantic content for AI models
+- Comprehensive service descriptions
+- FAQ sections with structured data
+- Business information in machine-readable format
+
+### 4. Performance Optimization
+- Image optimization with Next.js Image component
+- Code splitting and lazy loading
+- Core Web Vitals monitoring
+- Security headers and CSP
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+ 
+- npm, yarn, pnpm, or bun
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/your-username/maize-nextjs.git
+cd maize-nextjs
+```
+
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+3. Run the development server:
 ```bash
 npm run dev
 # or
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📊 SEO Analytics
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The project includes comprehensive SEO tracking:
+- Core Web Vitals monitoring
+- AI crawler detection and tracking
+- Structured data validation
+- Meta tag analysis
+- Image alt text tracking
+- Heading structure analysis
 
-## Learn More
+## 🔍 SEO Checklist
 
-To learn more about Next.js, take a look at the following resources:
+### Technical SEO
+- [x] XML Sitemap
+- [x] Robots.txt
+- [x] Meta tags optimization
+- [x] Structured data (JSON-LD)
+- [x] Canonical URLs
+- [x] Open Graph tags
+- [x] Twitter Cards
+- [x] Core Web Vitals optimization
+- [x] Mobile responsiveness
+- [x] Page speed optimization
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Content SEO
+- [x] Semantic HTML structure
+- [x] Heading hierarchy (H1-H6)
+- [x] Alt text for images
+- [x] Internal linking
+- [x] FAQ content
+- [x] Local business information
+- [x] Service descriptions
+- [x] Contact information
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### AI Crawler Optimization
+- [x] AI-friendly content structure
+- [x] Comprehensive service data
+- [x] Business schema markup
+- [x] FAQ schema markup
+- [x] Service schema markup
+- [x] Location and contact data
 
-## Deploy on Vercel
+## 🛠️ Customization
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Update Business Information
+Edit `src/lib/structured-data.ts` to update:
+- Company name and description
+- Contact information
+- Service offerings
+- Location data
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Update SEO Metadata
+Edit `src/app/layout.tsx` to modify:
+- Page titles and descriptions
+- Keywords
+- Open Graph images
+- Social media handles
+
+### Add New Services
+1. Update the services array in `src/app/page.tsx`
+2. Add corresponding structured data in `src/lib/structured-data.ts`
+3. Update the sitemap in `public/sitemap.xml`
+
+## 📈 Performance Monitoring
+
+The project includes built-in performance monitoring:
+- Core Web Vitals tracking
+- SEO metrics analysis
+- AI crawler detection
+- Page load performance
+
+## 🔒 Security
+
+- Security headers implementation
+- Content Security Policy
+- XSS protection
+- Frame options
+- Referrer policy
+
+## 📱 PWA Features
+
+- Web app manifest
+- Service worker ready
+- Mobile-optimized design
+- Offline capability ready
+
+## 🚀 Deployment
+
+### Vercel (Recommended)
+1. Push your code to GitHub
+2. Connect your repository to Vercel
+3. Deploy automatically
+
+### Other Platforms
+The project is compatible with:
+- Netlify
+- AWS Amplify
+- Google Cloud Platform
+- Any static hosting service
+
+## 📞 Support
+
+For questions about the project or SEO implementation, please contact:
+- **Email**: info@maizedevelopments.com
+- **Phone**: +1-604-XXX-XXXX
+- **Website**: https://maizedevelopments.com
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+---
+
+**Built with ❤️ for Maize Developments**

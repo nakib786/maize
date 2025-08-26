@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "seo-test": "node scripts/seo-test.js",
+    "seo-check": "npm run seo-test"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.10",

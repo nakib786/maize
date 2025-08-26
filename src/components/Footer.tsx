@@ -62,6 +62,24 @@ export default function Footer() {
                     gbasra@maizedevelopment.ca
                   </span>
                 </a>
+
+                <a 
+                  href="https://maps.google.com/?q=16076+102+A+Ave,+Surrey,+BC+V4N+2J7" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-start space-x-3 group hover:text-purple-400 transition-colors duration-300"
+                >
+                  <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </div>
+                  <span className="text-gray-300 group-hover:text-purple-400 transition-colors duration-300 text-sm leading-relaxed">
+                    16076 102 A Ave,<br />
+                    Surrey, BC V4N 2J7
+                  </span>
+                </a>
               </div>
             </div>
 
