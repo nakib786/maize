@@ -19,7 +19,7 @@ export default function Footer() {
               <div className="flex items-center space-x-4">
                 <div className="relative w-20 h-20">
                   <Image
-                    src="/images/maize-removebg.png"
+                    src="/images/Maize Logo.svg"
                     alt="Maize Developments Logo"
                     fill
                     className="object-contain"
@@ -50,7 +50,7 @@ export default function Footer() {
                 </a>
                 
                 <a 
-                  href="mailto:gbasra@maizedevelopment.ca" 
+                  href="mailto:gbasra@maizedevelopments.ca" 
                   className="flex items-center space-x-3 group hover:text-green-400 transition-colors duration-300"
                 >
                   <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center">
@@ -59,7 +59,7 @@ export default function Footer() {
                     </svg>
                   </div>
                   <span className="text-gray-300 group-hover:text-green-400 transition-colors duration-300">
-                    gbasra@maizedevelopment.ca
+                    gbasra@maizedevelopments.ca
                   </span>
                 </a>
 

@@ -88,12 +88,6 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Scroll Indicator - Desktop only */}
-      <div className="hidden md:block absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
-        <div className="hero-scroll-indicator">
-          <div className="hero-scroll-arrow"></div>
-        </div>
-      </div>
     </section>
   )
 }

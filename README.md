@@ -222,7 +222,7 @@ The project is compatible with:
 ## 📞 Support
 
 For questions about the project or SEO implementation, please contact:
-- **Email**: info@maizedevelopments.com
+- **Email**: gbasra@maizedevelopments.ca
 - **Phone**: +1-604-XXX-XXXX
 - **Website**: https://maizedevelopments.com
 

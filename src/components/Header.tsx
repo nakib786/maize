@@ -25,7 +25,7 @@ export default function Header() {
             <Link href="#home" className="flex items-center space-x-3 header-logo" onClick={closeMenu}>
               <div className="relative w-10 h-10">
                 <Image
-                  src="/images/maize-removebg.png"
+                  src="/images/Maize Logo.svg"
                   alt="Maize Developments Logo"
                   width={40}
                   height={40}
@@ -93,7 +93,7 @@ export default function Header() {
           <Link href="#home" className="flex items-center space-x-3" onClick={closeMenu}>
             <div className="relative w-12 h-12">
               <Image
-                src="/images/maize-removebg.png"
+                src="/images/Maize Logo.svg"
                 alt="Maize Developments Logo"
                 width={48}
                 height={48}

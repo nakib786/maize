@@ -4,7 +4,7 @@ export const generateStructuredData = () => {
     "@type": "Organization",
     "name": "Maize Developments",
     "url": "https://maizedevelopments.com",
-    "logo": "https://maizedevelopments.com/images/maize.png",
+    "logo": "https://maizedevelopments.com/images/Maize Logo.svg",
     "description": "Professional construction services specializing in new builds, renovations, rezoning, and subdivisions in British Columbia, Canada. From blueprints to keys, we build dreams one project at a time.",
     "foundingDate": "2020",
     "address": {

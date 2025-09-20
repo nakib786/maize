@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     description: 'Professional construction services in British Columbia specializing in new builds, renovations, rezoning, and subdivisions. From blueprints to keys, we build dreams one project at a time.',
     images: [
       {
-        url: '/images/maize.png',
+        url: '/images/Maize Logo.svg',
         width: 1200,
         height: 630,
         alt: 'Maize Developments - Professional Construction Services',
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Maize Developments - Professional Construction Services in British Columbia',
     description: 'Professional construction services in British Columbia specializing in new builds, renovations, rezoning, and subdivisions.',
-    images: ['/images/maize.png'],
+    images: ['/images/Maize Logo.svg'],
     creator: '@maizedevelopments',
   },
   robots: {
